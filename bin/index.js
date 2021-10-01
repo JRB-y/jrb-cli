@@ -2,33 +2,35 @@
 const { Command } = require('commander');
 const program = new Command();
 
-const { vueRepo } = require('./variables');
+const { vueRepo, expressRepo, VUE, EXPRESS, EXPRESS_VUE } = require('./variables');
 const { version } = require('../package.json');
-const { gitClone, initGit, updatePackageJson } = require('./commands');
+const { gitClone, initGit, updatePackageJson, npmInstall } = require('./commands');
 
 
-const createVueProject = async (folder) => {
+const createProject = async (repo, folder) => {
   // cloning the project
-  await gitClone(vueRepo, folder)
+  await gitClone(repo, folder)
   // update package.json information (name and version)
   await updatePackageJson(folder)
   // init git
   await initGit(folder)
-}
-
-const createVueExpressProject = () => {
-  console.log('create vue express app')
+  // npm install
+  await npmInstall(folder)
 }
 
 const newProject = async (type, folder) => {
-  console.log(`Cloning ${type} into ${folder}`);
-
   switch (type.toUpperCase()) {
-    case 'VUE':
-      await createVueProject(folder)
+    case VUE:
+      await createProject(vueRepo, folder);
       break;
-    case 'VUE_EXPRESS':
-      await createVueExpressProject(folder)
+
+    case EXPRESS:
+      await createProject(expressRepo, folder);
+      break;
+
+    case EXPRESS_VUE:
+      console.log('express_vue is comming soon :)');
+      break;
     default:
       console.error(`${type} is not supported`);
       break;

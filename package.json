@@ -1,6 +1,6 @@
 {
   "name": "jrb-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "My personal CLI for scafollding project quickly.",
   "main": "bin/index.js",
   "scripts": {

@@ -39,3 +39,14 @@ exports.initGit = async (folder) => {
     return
   }
 }
+
+exports.npmInstall = async (folder) => {
+  console.log('> npm install')
+
+  let { stdout, stderr } = await exec(`cd ${folder} && npm install`);
+
+  if (stderr) {
+    console.error(stderr)
+    return
+  }
+}
