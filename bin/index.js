@@ -4,7 +4,7 @@ const program = new Command();
 
 const { vueRepo, expressRepo, VUE, EXPRESS, EXPRESS_VUE } = require('./variables');
 const { version } = require('../package.json');
-const { gitClone, initGit, updatePackageJson, npmInstall } = require('./commands');
+const { gitClone, initGit, updatePackageJson, npmInstall, cd } = require('./commands');
 
 
 const createProject = async (repo, folder) => {
@@ -29,7 +29,9 @@ const newProject = async (type, folder) => {
       break;
 
     case EXPRESS_VUE:
-      console.log('express_vue is comming soon :)');
+      await mkdir(folder);
+      await createProject(expressRepo, `${folder}/server`);
+      await createProject(vueRepo, `${folder}/client`);
       break;
     default:
       console.error(`${type} is not supported`);
