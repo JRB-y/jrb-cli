@@ -3,4 +3,4 @@ exports.expressRepo = 'https://github.com/JRB-y/basic-express'
 
 exports.VUE = 'VUE'
 exports.EXPRESS = 'EXPRESS'
-exports.EXPRESS_VUE = 'EXPRESS_VUE'
+exports.EXPRESS_VUE = 'EXPRESS-VUE'
