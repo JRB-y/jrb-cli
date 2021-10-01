@@ -1,0 +1,21 @@
+{
+  "name": "jrb-cli",
+  "version": "0.0.1",
+  "description": "My personal CLI for scafollding project quickly.",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local:install": "npm install -g .",
+    "local:uninstall": "npm uninstall -g jrb-cli",
+    "local:run": "node ."
+  },
+  "author": "Jrb <jrb.youssef@gmail.com>",
+  "license": "ISC",
+  "bin": {
+    "jrb-cli": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^8.2.0",
+    "json": "^11.0.0"
+  }
+}
