@@ -4,7 +4,7 @@ const program = new Command();
 
 const { vueRepo, expressRepo, VUE, EXPRESS, EXPRESS_VUE } = require('./variables');
 const { version } = require('../package.json');
-const { gitClone, initGit, updatePackageJson, npmInstall, cd } = require('./commands');
+const { gitClone, initGit, updatePackageJson, npmInstall, mkdir } = require('./commands');
 
 
 const createProject = async (repo, folder) => {
