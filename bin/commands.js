@@ -50,3 +50,12 @@ exports.npmInstall = async (folder) => {
     return
   }
 }
+
+exports.mkdir = async (folder) => {
+  let { stdout, stderr } = await exec(`mkdir ${folder}`);
+
+  if (stderr) {
+    console.error(stderr)
+    return
+  }
+}
