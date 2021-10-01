@@ -5,7 +5,7 @@
 
   - basic-vue-vite 👍
   - basic-express 👍
-  - basic-express-vue ⌛
+  - basic-express-vue 👍
 
 </p>
 <br><br>
